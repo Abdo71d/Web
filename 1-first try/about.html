@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Ramadan | Countdown</title>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+
+	<body>
+		<header>
+			<div class="container">
+				<div id="branding">
+					<h1><span class="highlight">Ramadan</span> Kareem</h1>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="index.html">HOME</a></li>
+						<li class="current"><a href="about.html">Countdown</a></li>
+						<li><a href="services.html">SERVICES</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<table class="countdownContainer">
+			<tr class="info">
+				<td colspan="4">Ramadan Countdown</td>
+			</tr>
+			<tr class="info">
+				<td id="days">120</td>
+				<td id="hours">4</td>
+				<td id="minutes">12</td>
+				<td id="seconds">22</td>
+			</tr>
+			<tr>
+				<td>Days</td>
+				<td>Hours</td>
+				<td>Minutes</td>
+				<td>Seconds</td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+
+			function countdown(){
+				var now = new Date();
+				var eventDate = new Date(2021, 3, 14);
+
+				var currentTiime = now.getTime();
+				var eventTime = eventDate.getTime();
+
+				var remTime = eventTime - currentTiime;
+
+				var s = Math.floor(remTime / 1000);
+				var m = Math.floor(s / 60);
+				var h = Math.floor(m / 60) -12+7;
+				var d = Math.floor(h / 24);
+
+				h %= 24;
+				m %= 60;
+				s %= 60;
+
+				h = (h < 10) ? "0" + h : h;
+				m = (m < 10) ? "0" + m : m;
+				s = (s < 10) ? "0" + s : s;
+
+				document.getElementById("days").textContent = d;
+				document.getElementById("days").innerText = d;
+
+				document.getElementById("hours").textContent = h;
+				document.getElementById("minutes").textContent = m;
+				document.getElementById("seconds").textContent = s;
+
+				setTimeout(countdown, 1000);
+			}
+
+			countdown();
+		</script>
+
+		<section id="newsletter">
+			<div class="container">
+				<h1>What's your opinion on this webpage?</h1>
+				<form>
+					<select name="opinion">
+						<option value="nice">Very Good</option>
+						<option value="good">Very Nice</option>
+						<option value="joke1">Fantastic  -no democracy in this site xD-</option>
+						<option value="joke2">Woww  -my site, my html, my rule xD-</option>
+						<option value="bad">Bad  -I was joking xD. choose this if u don't like it :)-</option>
+					</select>
+					<button type="submit" class="button_1">
+						share
+					</button>
+				</form>
+			</div>
+		</section>
+
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+
+		<footer>
+			<p>Web design Acme &copy;2021</p>
+		</footer>
+	</body>
+</html>
